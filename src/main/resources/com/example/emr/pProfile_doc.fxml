@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="690.6666666666666" prefWidth="1160.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle fx:id="rectangle_image" arcHeight="5.0" arcWidth="5.0" fill="#5b5858" height="190.0" layoutX="52.0" layoutY="56.0" stroke="#e0e4eb" strokeType="INSIDE" width="230.0" />
+      <Label fx:id="label_name" layoutX="378.0" layoutY="70.0" text="NAME:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_name1" layoutX="439.0" layoutY="70.0" prefHeight="27.0" prefWidth="158.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_pastmedicalrecord" layoutX="671.0" layoutY="70.0" text="PAST MEDICAL RECORD:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_pastmedicalrecord1" layoutX="875.0" layoutY="70.0" prefHeight="27.0" prefWidth="158.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_dob" layoutX="385.0" layoutY="145.0" text="DOB:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_dob1" layoutX="431.0" layoutY="145.0" prefHeight="11.0" prefWidth="158.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_anyallergies" layoutX="671.0" layoutY="145.0" text="ANY ALLERGIES:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_anyallergies1" layoutX="808.0" layoutY="145.0" prefHeight="27.0" prefWidth="158.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_gender" layoutX="354.0" layoutY="222.0" text="GENDER:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_gender1" layoutX="438.0" layoutY="222.0" prefHeight="4.0" prefWidth="143.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_dateofadmission" layoutX="671.0" layoutY="222.0" text="DATE OF ADMISSION:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_dateofadmission1" layoutX="856.0" layoutY="222.0" prefHeight="27.0" prefWidth="158.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_address" layoutX="73.0" layoutY="287.0" text="ADDRESS:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_address1" layoutX="160.0" layoutY="287.0" prefHeight="27.0" prefWidth="143.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_age" layoutX="386.0" layoutY="287.0" text="AGE:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_age1" layoutX="428.0" layoutY="287.0" prefHeight="27.0" prefWidth="143.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_appointmentdate" layoutX="671.0" layoutY="287.0" text="APPOINTMENT DATE:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_appointmentdate1" layoutX="856.0" layoutY="287.0" prefHeight="27.0" prefWidth="158.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="pane_analysishistory" layoutX="177.0" layoutY="356.0" prefHeight="254.0" prefWidth="770.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label fx:id="label_analysishistory" layoutX="36.0" layoutY="21.0" text="Analysis History">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

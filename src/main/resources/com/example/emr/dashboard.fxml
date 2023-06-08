@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="720.0" prefWidth="149.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="patientprofile" layoutX="15.0" layoutY="573.0">
+               <image>
+                  <Image url="@../../../image/User_cicrle.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="88.0" layoutX="25.0" layoutY="54.0">
+               <image>
+                  <Image url="@../../../image/default.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="37.0" layoutY="185.0">
+               <image>
+                  <Image url="@../../../image/Patient_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="720.0" prefWidth="1205.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="154.0" fitWidth="1139.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/live%20the%20healthy%20way.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="59.0" layoutY="192.0" minHeight="229.0" minWidth="520.0" prefHeight="229.0" prefWidth="520.0" />
+            <Pane layoutX="62.0" layoutY="202.0" minHeight="229.0" minWidth="520.0" prefHeight="236.0" prefWidth="536.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="43.0" layoutY="32.0" text="Patient count:">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="208.0" layoutY="89.0" text="105">
+                     <font>
+                        <Font name="Arial Bold" size="72.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="632.0" layoutY="202.0" minHeight="229.0" minWidth="464.0" prefHeight="236.0" prefWidth="464.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="43.0" layoutY="32.0" text="Doctors count:">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="192.0" layoutY="89.0" text="19">
+                     <font>
+                        <Font name="Arial Bold" size="72.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="62.0" layoutY="475.0" prefHeight="247.0" prefWidth="1035.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <BarChart layoutX="-8.0" layoutY="-7.0" prefHeight="262.0" prefWidth="1051.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <Label layoutX="41.0" layoutY="14.0" text="Live Patient Count:">
+                     <font>
+                        <Font name="Times New Roman" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator orientation="VERTICAL" prefHeight="720.0" prefWidth="4.0" />
+            <Separator prefHeight="295.0" prefWidth="1134.0" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

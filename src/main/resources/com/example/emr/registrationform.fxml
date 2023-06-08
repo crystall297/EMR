@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="label_gender" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="label_name" layoutX="381.0" layoutY="98.0" text="Name:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_upload_image" layoutX="104.0" layoutY="266.0" mnemonicParsing="false" text="UPLOAD IMAGE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Rectangle fx:id="rectangle_image" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="176.0" layoutX="22.0" layoutY="77.0" stroke="#9000ff" strokeType="INSIDE" width="283.0" />
+      <TextField fx:id="textfield_name" layoutX="468.0" layoutY="103.0" prefHeight="24.0" prefWidth="298.0" style="-fx-background-color: #e9e9e9;" />
+      <Label fx:id="label_icno" layoutX="886.0" layoutY="98.0" text="IC NO. :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_icno" layoutX="986.0" layoutY="102.0" prefHeight="26.0" prefWidth="246.0" style="-fx-background-color: #e9e9e9;" />
+      <Label fx:id="label_DOB" layoutX="386.0" layoutY="179.0" text="DOB:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_dob" layoutX="468.0" layoutY="187.0" prefHeight="26.0" prefWidth="686.0" style="-fx-background-color: #e9e9e9;" />
+      <Label fx:id="label_gender" layoutX="366.0" layoutY="263.0" text="Gender:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="Choicebox_gender" layoutX="468.0" layoutY="277.0" prefHeight="26.0" prefWidth="162.0" />
+      <Label fx:id="Address_label" layoutX="59.0" layoutY="342.0" text="Address:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_address" layoutX="164.0" layoutY="347.0" prefHeight="26.0" prefWidth="758.0" style="-fx-background-color: #e9e9e9;" />
+      <Label fx:id="label_allergies" layoutX="56.0" layoutY="408.0" text="Allergies:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="ChoiceBox_allergies" layoutX="164.0" layoutY="412.0" prefHeight="26.0" prefWidth="162.0" />
+      <Label fx:id="label_dateofadmission" layoutX="54.0" layoutY="469.0" text="Date of admission:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_dateofadmission" layoutX="259.0" layoutY="474.0" prefHeight="26.0" prefWidth="326.0" style="-fx-background-color: #e9e9e9;" />
+      <Label fx:id="label_pastmedicalrecord" layoutX="53.0" layoutY="541.0" text="Past Medical Record:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_pastmedicalrecord" layoutX="285.0" layoutY="534.0" prefHeight="132.0" prefWidth="384.0" style="-fx-background-color: #e9e9e9;" />
+      <Button layoutX="1090.0" layoutY="623.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #9000ff;" text="Submit" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
