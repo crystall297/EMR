@@ -20,12 +20,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1E1E1E;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #1E1E1E;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emr.Controllers.DiagnosisController">
    <children>
       <Separator layoutX="115.0" orientation="VERTICAL" prefHeight="720.0" prefWidth="7.0" />
       <TabPane layoutX="119.0" prefHeight="720.0" prefWidth="1160.0" style="-fx-background-color: #1E1E1E;" tabClosingPolicy="UNAVAILABLE" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab style="-fx-background-color: #9000ff;" text="Profile">
+          <Tab fx:id="profile_tab" style="-fx-background-color: #9000ff;" text="Profile">
                   <content>
                     <AnchorPane fx:id="patient_Interface" minHeight="0.0" minWidth="0.0" prefWidth="200.0" style="-fx-background-color: #000000;">
                            <children>
@@ -225,7 +225,7 @@
                         </AnchorPane>
                   </content>
                 </Tab>
-          <Tab text="Analysis">
+          <Tab fx:id="analysis_tab" text="Analysis">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -240,9 +240,9 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Diagnosis">
+            <Tab fx:id="diagnosis_tab" text="Diagnosis" >
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" >
                      <children>
                         <TextField alignment="TOP_LEFT" layoutX="242.0" layoutY="271.0" prefHeight="174.0" prefWidth="703.0" style="-fx-background-color: #F9F6EE; -fx-background-radius: 7;" />
                         <Text fill="WHITE" layoutX="100.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks">
@@ -313,12 +313,12 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Treatment">
+            <Tab fx:id="treatment_tab" text="Treatment">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
-            <Tab text="Summary">
+            <Tab fx:id="summary_tab" text="Summary">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>

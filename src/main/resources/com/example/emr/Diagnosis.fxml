@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="704.0" prefWidth="1094.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emr.Controllers.DiagnosisController">
+   <children>
+      <TabPane layoutY="-1.0" prefHeight="704.0" prefWidth="1160.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="profile_tab" text="Profile" />
+            <Tab fx:id="analysis_tab" text="Analysis" />
+            <Tab fx:id="diagnosis_tab" text="Diagnosis">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="treatment_tab" text="Treatment">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="summary_tab" text="Summary">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TextField fx:id="remark_text" alignment="TOP_LEFT" layoutX="189.0" layoutY="273.0" prefHeight="158.0" prefWidth="545.0" style="-fx-background-color: #F9F6EE; -fx-background-radius: 7;" />
+      <Text fill="WHITE" layoutX="100.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Text>
+      <Pane layoutX="69.0" layoutY="76.0" prefHeight="158.0" prefWidth="960.0" style="-fx-background-color: #9000ff; -fx-background-radius: 10;" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+         <children>
+            <GridPane fx:id="gridpane" layoutX="51.0" layoutY="34.0" prefHeight="91.0" prefWidth="696.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: White;" text="Fever" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Button fx:id="add_symptoms" layoutX="854.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" style="-fx-background-radius: 20; -fx-border-color: #ffff; -fx-border-radius: 20;" text="+" />
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="100.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Practitioner: ">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="100.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnosis Code: ">
+         <font>
+            <Font name="Microsoft Sans Serif" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="add_diagnosis" layoutX="714.0" layoutY="624.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="174.0" style="-fx-background-color: #9000ff; -fx-background-radius: 20;" text="Add Diagnosis" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="to_treatment" layoutX="924.0" layoutY="624.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #9000ff; -fx-background-radius: 20;" text="Treatment" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField alignment="CENTER" editable="false" layoutX="146.0" layoutY="60.0" prefHeight="42.0" prefWidth="125.0" style="-fx-background-color: #ffff; -fx-background-radius: 10;" text="Symptoms">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <ListView fx:id="symptoms_view" editable="true" layoutX="843.0" layoutY="234.0" prefHeight="292.0" prefWidth="237.0" style="-fx-background-color: white;" visible="false" />
+      <ChoiceBox fx:id="practitioner_box" layoutX="246.0" layoutY="482.0" prefHeight="33.0" prefWidth="272.0" />
+      <ComboBox fx:id="diagnosis_box" layoutX="255.0" layoutY="552.0" prefHeight="28.0" prefWidth="265.0" />
+      <Label fx:id="test_label" layoutX="161.0" layoutY="624.0" prefHeight="46.0" prefWidth="152.0" text="Label" textFill="#f5f5f5" />
+   </children>
+</AnchorPane>

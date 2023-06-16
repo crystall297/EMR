@@ -10,11 +10,8 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("demo.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setTitle("Welcome to EMR!");
-        stage.setScene(scene);
-        stage.show();
+      ViewModel viewModel = new ViewModel();
+      viewModel.getPatientRecord();
     }
 
     public static void main(String[] args) {
