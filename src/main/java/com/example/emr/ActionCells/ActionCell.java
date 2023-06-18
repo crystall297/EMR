@@ -2,6 +2,7 @@ package com.example.emr.ActionCells;
 
 import com.example.emr.PatientAccHandler;
 import com.example.emr.PatientRecord;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 
@@ -10,14 +11,14 @@ import java.io.IOException;
 public class ActionCell extends TableCell<PatientRecord,Void> {
     private final Button deleteButton;
 
-    public ActionCell() {
+    public ActionCell(ObservableList<PatientRecord> patientRecordObservableList) {
         deleteButton = new Button("Delete");
         deleteButton.setOnAction(event -> {
             PatientRecord rowData = getTableRow().getItem();
-            getTableView().getItems().remove(rowData);
+            patientRecordObservableList.remove(rowData);  // Use the provided ObservableList to remove the item
             PatientAccHandler pah = new PatientAccHandler();
             try {
-                pah.delete(rowData.getP_Ic(),PatientRecord.filename);
+                pah.delete(rowData.getP_Ic(), PatientRecord.filename);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

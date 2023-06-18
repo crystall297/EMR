@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -74,44 +75,14 @@ public class PatientRecordController implements Initializable {
         private List<com.example.emr.PatientRecord> searchList = new ArrayList<>();
         private String searchString = "";
 
+
         public void logout() {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Logout Confirmation");
             alert.setHeaderText(null);
             alert.setContentText("Confirm to Logout?");
             Optional<ButtonType> option_btn = alert.showAndWait();
-          /*  try {
-               if(option_btn.equals(ButtonType.YES)) {
-                    //if user press yes , it will lead them back to login page//
-                     Parent root = FXMLLoader.load(getClass().getResource());
-                    Scene scene = new Scene(root);
-                    root.setOnMousePressed((MouseEvent event) ->{
-                        x = event.getSceneX();
-                        y = event.getSceneY();
-                   });
-
-                    root.setOnMouseDragged((MouseEvent event)->{
-                       stage.setX(event.getSceneX() - x);
-                       stage.setY(event.getSceneY() - y);
-                       stage.setOpacity(0.8);
-                    });
-
-                    root.setOnMouseReleased((MouseEvent event) ->{
-                        stage.setOpacity(1);
-                    });
-
-                    stage.initStyle(StageStyle.TRANSPARENT);
-
-                    stage.setScene(scene);
-                    stage.show();
-                }
-            } catch (Exception e){
-                e.printStackTrace();
-            } */
         }
-
-        //when the addBtn is clicked//
-
 
         public void close() {
             System.exit(0);
@@ -127,33 +98,99 @@ public class PatientRecordController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PatientAccHandler pah = new PatientAccHandler();
+        table_patient.setEditable(true);
 
         TableColumn<com.example.emr.PatientRecord, String> name = new TableColumn<>("name");
         name.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Name"));
+        name.setCellFactory(TextFieldTableCell.forTableColumn());
+        name.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Name(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> ic = new TableColumn<com.example.emr.PatientRecord, String>("ic");
         ic.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Ic"));
+        ic.setCellFactory(TextFieldTableCell.forTableColumn());
+        ic.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Ic(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> dob = new TableColumn<>("dob");
         dob.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Dob"));
+        dob.setCellFactory(TextFieldTableCell.forTableColumn());
+        dob.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Dob(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> gender = new TableColumn<com.example.emr.PatientRecord, String>("gender");
         gender.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Gender"));
+        gender.setCellFactory(TextFieldTableCell.forTableColumn());
+        gender.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Gender(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> address = new TableColumn<>("address");
         address.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Address"));
+        address.setCellFactory(TextFieldTableCell.forTableColumn());
+        address.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Address(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> allergies = new TableColumn<>("allergies");
         allergies.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Allergies"));
+        allergies.setCellFactory(TextFieldTableCell.forTableColumn());
+        allergies.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Allergies(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> doa = new TableColumn<com.example.emr.PatientRecord, String>("doa");
         doa.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Doa"));
+        doa.setCellFactory(TextFieldTableCell.forTableColumn());
+        doa.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Doa(event.getNewValue());
+
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
 
         TableColumn<com.example.emr.PatientRecord, String> pmr = new TableColumn<com.example.emr.PatientRecord, String>("pmr");
         pmr.setCellValueFactory(new PropertyValueFactory<com.example.emr.PatientRecord, String>("p_Pmr"));
+        pmr.setCellFactory(TextFieldTableCell.forTableColumn());
+        pmr.setOnEditCommit(event -> {
+            com.example.emr.PatientRecord patient = event.getRowValue();
+            patient.setP_Name(event.getNewValue());
 
+            // Update the CSV file with the new values
+            updateCSV(observableArrayList);
+        });
+
+        //delete & view action cell//
         TableColumn<com.example.emr.PatientRecord, Void> delete = new TableColumn<>("delete");
-        delete.setCellFactory(column -> new ActionCell());
+        delete.setCellFactory(column -> new ActionCell(observableArrayList));
 
         TableColumn<com.example.emr.PatientRecord, Void> view = new TableColumn<>("view_text");
         view.setCellFactory(column -> new ActionCell2());
@@ -196,6 +233,7 @@ public class PatientRecordController implements Initializable {
         searchPatient();
 
     }
+
     private void searchPatient() {
         FilteredList<com.example.emr.PatientRecord> filterdata = new FilteredList<>(observableArrayList, e-> true);
         searchbar.setOnKeyReleased(e -> {
@@ -220,5 +258,14 @@ public class PatientRecordController implements Initializable {
         });
     }
 
+    public void updateCSV(List<com.example.emr.PatientRecord> records) {
+        try {
+            PatientAccHandler pah = new PatientAccHandler();
+            pah.writeCSV(records, com.example.emr.PatientRecord.filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately
+        }
+    }
 
 }

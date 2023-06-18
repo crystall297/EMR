@@ -41,7 +41,7 @@ public class RegistrationController implements Initializable {
     public Label label_uploadimage;
     public AnchorPane registration_form;
     public String[] gender = {"male","female"};
-    public String[] allergies = {"nuts","dairy products","seafood","pineapple"};
+    public String[] allergies = {"nuts","dairy products","seafood","pineapple","NONE"};
     public TextArea textarea_pmr;
 
     public class registrationController {
@@ -136,10 +136,10 @@ public class RegistrationController implements Initializable {
         PatientRecord patientRecord = new PatientRecord(name,ic,dob,gender,address,allergies,doa,pmr);
         PatientAccHandler pah = new PatientAccHandler();
         pah.create(patientRecord);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Message");
-            alert.setHeaderText(null);
-            alert.setContentText("Info saved");
-            Optional<ButtonType> option_btn = alert.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Message");
+        alert.setHeaderText(null);
+        alert.setContentText("Info saved");
+        Optional<ButtonType> option_btn = alert.showAndWait();
     }
 }

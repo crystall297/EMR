@@ -43,5 +43,4 @@ public class pProfileController implements Initializable {
         label_gender1.setText(rowData.getP_Gender());
         label_pastmedicalrecord1.setText(rowData.getP_Pmr());
     }
-
 }

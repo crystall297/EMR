@@ -24,18 +24,29 @@ public class ViewModel {
         stage = new Stage();
     }
 
-    public void getPatientRecord() {
-        if (PatientRecord == null) {
-            try {
-                FXMLLoader patientRecord = new FXMLLoader(getClass().getResource("/com/example/emr/pForm.fxml"));
-                Parent my_root = patientRecord.load();
-                Stage stage = new Stage();
-                stage.setTitle("PatientRecord");
-                stage.setScene(new Scene(my_root));
-                stage.show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    public static void getPatientRecord() {
+        try {
+            FXMLLoader patientRecord = new FXMLLoader(ViewModel.class.getResource("/com/example/emr/pForm.fxml"));
+            Parent my_root = patientRecord.load();
+            Stage stage = new Stage();
+            stage.setTitle("PatientRecord");
+            stage.setScene(new Scene(my_root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showDashboard(){
+        try {
+            FXMLLoader patientRecord = new FXMLLoader(getClass().getResource("/com/example/emr/dashboard.fxml"));
+            Parent my_root = patientRecord.load();
+            Stage stage = new Stage();
+            stage.setTitle("PatientRecord");
+            stage.setScene(new Scene(my_root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
