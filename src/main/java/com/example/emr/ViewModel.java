@@ -1,6 +1,7 @@
 package com.example.emr;
 
 import com.example.emr.Controllers.DiagnosisController;
+import com.example.emr.Controllers.PatientProcedureRecordController;
 import com.example.emr.Controllers.pProfileController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -69,12 +70,18 @@ public class ViewModel {
         }
     }
 
-
-    public static void showDiagnosisForm(com.example.emr.PatientRecord rowData) {
+    //crystal: i did some changes to ivy code here cus the diag code is the cause
+    public static void showDiagnosisForm(PatientRecord rowData) {
         try {
             FXMLLoader diagnosis_loader = new FXMLLoader(ViewModel.class.getResource("/com/example/emr/Diagnosis.fxml"));
             AnchorPane diagnosis_pane = diagnosis_loader.load();
             DiagnosisController diagnosisController = diagnosis_loader.getController();
+
+            // Create an instance of PatientProcedureRecordController
+            PatientProcedureRecordController patientProcedureRecordController = new PatientProcedureRecordController();
+            // Set the instance in DiagnosisController
+            diagnosisController.setPatientProcedureRecordController(patientProcedureRecordController);
+
             diagnosisController.creatediagnosis(rowData);
             Scene newScene = new Scene(diagnosis_pane);
             stage.setScene(newScene);
@@ -87,5 +94,32 @@ public class ViewModel {
     }
 
 
+    public void showTreatmentPage() throws IOException {
+        try {
+            FXMLLoader T_page = new FXMLLoader(getClass().getResource("/com/example/emr/treatment.fxml"));
+            Parent t_root = (Parent) T_page.load();
+            Stage stage = new Stage();
+            stage.setTitle("Treatment");
+            stage.setScene(new Scene(t_root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showProcedureForm() throws IOException {
+        try {
+            FXMLLoader R_form = new FXMLLoader(getClass().getResource("/com/example/emr/Procedure_form.fxml"));
+            Parent r_root = (Parent) R_form.load();
+            /*PatientProcedureRecordController pprc = new PatientProcedureRecordController();
+            pprc.displayProcedures();*/
+            Stage stage = new Stage();
+            stage.setTitle("Procedure");
+            stage.setScene(new Scene(r_root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

@@ -7,6 +7,7 @@ import com.example.emr.ViewModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
@@ -29,6 +30,9 @@ public class DiagnosisController implements Initializable {
     public Tab diagnosis_tab;
     public Tab profile_tab;
     private ObservableList<String> selectedItems = FXCollections.observableArrayList();
+    private ObservableList<Map.Entry<String, String>> keyValueList;
+    @FXML
+    private PatientProcedureRecordController patientProcedureRecordController;
 
     public String[] symptoms = {"Fever", "Headache" , "Fatigue" , "Nausea" , "Vomiting", "Diarrhea", "Abdominal pain" , "Chest pain" , "Shortness of breath" , "Cough" ,
             "Sore throat" ,
@@ -61,6 +65,11 @@ public class DiagnosisController implements Initializable {
     int row = 1;
     int column = 0;
     private PatientRecord rowData;
+
+    // Setter method for patientProcedureRecordController
+    public void setPatientProcedureRecordController(PatientProcedureRecordController patientProcedureRecordController) {
+        this.patientProcedureRecordController = patientProcedureRecordController;
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         add_symptoms.setOnMouseClicked(mouseEvent -> {
@@ -128,12 +137,19 @@ public class DiagnosisController implements Initializable {
 
         add_diagnosis.setOnMouseClicked(mouseEvent -> {
             try {
-               creatediagnosis(rowData);
+                creatediagnosis(rowData);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
 
+        to_treatment.setOnMouseClicked(mouseEvent -> {
+            try {
+                new ViewModel().showTreatmentPage();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     public void creatediagnosis(PatientRecord rowData) throws IOException {
@@ -143,12 +159,16 @@ public class DiagnosisController implements Initializable {
         String remarks = remark_text.getText();
         String practitioner = String.valueOf(practitioner_box.getValue());
         String diagnosis = String.valueOf(diagnosis_box.getValue());
+
+        TreatmentController t = new TreatmentController();
+        t.updateLabelText(diagnosis);
+        patientProcedureRecordController.searchProcCode(diagnosis);
+
         PatientDiagnosis pd = new PatientDiagnosis(rowData.getP_Ic(), rowData.getP_Doa(), arrayList ,remarks,practitioner,diagnosis);
         DiagnosisHandler dh = new DiagnosisHandler();
         dh.create(pd);
+
     }
-
-
 
     //convert key/values into string format//
     private static class KeyValueStringConverter extends javafx.util.StringConverter<Map.Entry<String, String>> {
